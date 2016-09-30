@@ -6,12 +6,14 @@ $defaultFont:Roboto;
 body{
   font-family: Roboto;
 }
+input{
+  width: 100%;
+}
 .box-login{
-  width: 550px;
+  width: 450px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 80px;
-  height: 250px;
   background-color: $backgroundColor;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -21,6 +23,11 @@ body{
   padding-top: 8px;
   height: 45px;
   background-color: $primaryColor;
+}
+.box-login-content{
+  width: calc(100% - 30px);
+  padding: 10px;
+  font-size: 20px;
 }
 .left-20{
   margin-left:-50px!important;
@@ -43,11 +50,22 @@ input, input::focus, input::active{
 }
 .text-title{
   color: #fff;
-  font-size: 18px;
+  font-size: 16px;
   margin-right: 15px;
   padding-top: 10px;
   float: left;
 }
 .font-white{
   color: #fff;
+}
+.inputdemoErrors .inputErrorsApp {
+  min-height: 48px; }
+
+.inputdemoErrors md-input-container > p {
+  font-size: 0.8em;
+  text-align: left;
+  width: 100%; 
+  }
+.md-block{
+  width: 100%; 
 }

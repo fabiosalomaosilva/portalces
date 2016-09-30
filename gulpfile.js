@@ -21,6 +21,14 @@ gulp.task('libs', function () {
         .pipe(gulp.dest(jsDest))
         .pipe(livereload());
 });
+gulp.task('firebase', function () {
+    return gulp.src("fireconfig.js")
+        .pipe(rename('fireconfig.min.js'))
+        .pipe(ngAnnotate())
+        .pipe(uglifyjs())
+        .pipe(gulp.dest("public"))
+        .pipe(livereload());
+});
 
 gulp.task('sass', function () {
     return gulp.src(cssFiles)
@@ -58,6 +66,7 @@ gulp.task('htmlWatch', function () {
 gulp.task('libsWatch', function () {
     livereload.listen();
     gulp.watch(jsFiles, ['libs']);
+    gulp.watch("fireconfig.js", ['firebase']);
 });
 
-gulp.task('default', ['libs', 'sass', 'sassWatch', 'indexHtml', 'viewsHtml', 'htmlWatch', 'libsWatch']);
+gulp.task('default', ['libs', 'sass', 'firebase', 'sassWatch', 'indexHtml', 'viewsHtml', 'htmlWatch', 'libsWatch']);
